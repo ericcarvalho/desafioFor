@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputContato" placeholder="Digite o nome do contato">
+    <button id="botaoProcura">Procurar Contato</button>
+    <p id="resultadoContato">Contato</p>
+</body>
+
+<script>
+
+
+
+    const contatos = [
+        { 'nome': 'Alice', number: '123456789'},
+        { 'nome': 'Bob', number: '987654321'},
+        { 'nome': 'Charlie', number: '555555555'},
+        { 'nome': 'Denis', number: '1234154413151'},
+        { 'nome': 'Rick', number: '9870001001207'},
+        { 'nome': 'Chamberlein', number: '5553004548'},
+        { 'nome': 'Anthony', number: '123432543548'},
+        { 'nome': 'Duncan', number: '9872454843' },
+        { 'nome': 'Leslie', number: '555415214878'},
+        { 'nome': 'Carla', number: '123421434847'},
+        { 'nome': 'Sheila', number: '9876216681'},
+        { 'nome': 'Yasmine', number: '445477755'},
+    ]; // Exemplo de lista de contatos
+
+
+    function exibeContato() {
+
+        const inputContato = document.getElementById('inputContato').value;
+        let p = document.getElementById('resultadoContato');
+
+        console.log('Contato procurado:', inputContato);
+        // Aqui você pode adicionar a lógica para procurar o contato
+
+        for (let i = 0; i < contatos.length; i++) {
+            if (contatos[i].nome.toLowerCase() === inputContato.toLowerCase()) {
+                p.textContent = `Contato encontrado: ${contatos[i].nome}, Número: ${contatos[i].number}`;
+                return;
+            }
+        }
+        p.textContent = 'Contato não encontrado';
+    
+
+
+    };
+
+    document.getElementById('botaoProcura').addEventListener('click', exibeContato);
+
+</script>
+
+</html>
