@@ -41,12 +41,21 @@
         console.log('Contato procurado:', inputContato);
         // Aqui você pode adicionar a lógica para procurar o contato
 
-        for (let i = 0; i < contatos.length; i++) {
+        /*for (let i = 0; i < contatos.length; i++) {
             if (contatos[i].nome.toLowerCase() === inputContato.toLowerCase()) {
                 p.textContent = `Contato encontrado: ${contatos[i].nome}, Número: ${contatos[i].number}`;
                 return;
             }
+        }*/
+
+        for (const element of contatos) {
+            if (element.nome.toLowerCase() === inputContato.toLowerCase()) {
+                p.textContent = `Contato encontrado: ${element.nome}, Número: ${element.number}`;
+                return;
+            }
+            
         }
+
         p.textContent = 'Contato não encontrado';
     
 
