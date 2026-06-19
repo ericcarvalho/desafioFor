@@ -40,7 +40,22 @@
 
         console.log('Contato procurado:', inputContato);
 
-        contatos.forEach((element, index) => {
+        let i = 0;
+       
+       do {
+        const element = contatos[i];
+        if (element.nome.toLowerCase() === inputContato.toLowerCase()) {
+            p.textContent = `Contato encontrado: ${element.nome} Número: ${element.number}`;
+            return;
+        } 
+        else {
+            p.textContent = `Contato não encontrado`;
+        }
+        i++;
+       } while ( i < contatos.length);
+
+       
+        /*contatos.forEach((element, index) => {
             if (element.nome.toLowerCase() === inputContato.toLowerCase()) {
                 p.innerHTML = `Contato encontrado: ${element.nome}, Número: ${element.number}`;
                 return;
@@ -49,7 +64,7 @@
             }
             
          
-        });
+        });*/
 
 
 
