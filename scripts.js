@@ -46,4 +46,10 @@ function calculateTotal(cart) {
     return total;
 }
 
-console.log(totalPrice(cart), `com desconto ${calculateTotal(cart)}`);
+function discountValue(){
+    const discount = totalPrice(cart) - calculateTotal(cart);
+    return discount;
+}
+
+
+console.log(`Preço total: ${totalPrice(cart)}, com desconto: ${calculateTotal(cart)}, o valor do desconto é: ${discountValue()}`);
